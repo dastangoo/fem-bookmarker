@@ -25,7 +25,7 @@ app.on('ready', () => {
 
   mainWindow.loadURL(`file://${__dirname}/index.html`);
   // mainWindow.loadURL('http://www.google.com');
-  // require('devtron').install();
+  require('devtron').install();
 });
 // console.log('Hello');
 
