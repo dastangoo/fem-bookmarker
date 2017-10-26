@@ -10,10 +10,20 @@
 //   document.body.appendChild(file);
 // });
 
+const { shell } = require('electron');
+
 const newLinkUrl = document.querySelector('#new-link-url');
 const newLinkSubmit = document.querySelector('.new-link-form--submit');
 const newLinkForm = document.querySelector('.new-link-form');
 const linkTemplate = document.querySelector('#link-template');
+const linkSection = document.querySelector('.links');
+
+linkSection.addEventListener('click', (event) => {
+  if (event.target.href) {
+    event.preventDefault();
+    shell.openExternal(event.target.href);
+  }
+});
 
 newLinkUrl.addEventListener('keyup', () => {
   newLinkSubmit.disabled = !newLinkUrl.validity.valid;
@@ -27,12 +37,12 @@ const addToPage = ({ title, url }) => {
   const newLink = linkTemplate.content.cloneNode(true);
   const titleElement = newLink.querySelector('.link--title');
   const urlElement = newLink.querySelector('.link--url');
-  const linkSelection = document.querySelector('.links');
+
   titleElement.textContent = title;
   urlElement.href = url;
   urlElement.textContent = url;
 
-  linkSelection.appendChild(newLink);
+  linkSection.appendChild(newLink);
   return { title, url };
 };
 newLinkForm.addEventListener('submit', (event) => {
