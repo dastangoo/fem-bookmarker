@@ -1,3 +1,6 @@
+// const electron = require('electron');
+// const app = electron.app;
+
 const { app, BrowserWindow } = require('electron');
 
 
@@ -7,6 +10,7 @@ app.on('ready', () => {
   mainWindow = new BrowserWindow({
     width: 300,
     height: 600,
+    // titleBarStyle: 'hidden-inset'
     show: false
   });
 
@@ -19,7 +23,8 @@ app.on('ready', () => {
   });
 
   mainWindow.loadURL(`file://${__dirname}/index.html`);
-  require('devtron').install();
+  // mainWindow.loadURL('http://www.google.com');
+  // require('devtron').install();
 });
 
 
