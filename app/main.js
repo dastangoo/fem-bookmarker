@@ -1,12 +1,13 @@
 // const electron = require('electron');
 // const app = electron.app;
-
+// console.log('Hello from Electron.');
 const { app, BrowserWindow } = require('electron');
 
 
 let mainWindow = null;
 
 app.on('ready', () => {
+  // console.log('I am ready');
   mainWindow = new BrowserWindow({
     width: 300,
     height: 600,
@@ -26,5 +27,5 @@ app.on('ready', () => {
   // mainWindow.loadURL('http://www.google.com');
   // require('devtron').install();
 });
-
+// console.log('Hello');
 

@@ -24,6 +24,7 @@
   "devDependencies": {
     "devtron": "^1.4.0",
     "eslint": "^3.10.0",
+    "jslint": "^0.11.0",
     "spectron": "^3.4.0"
   }
 }
